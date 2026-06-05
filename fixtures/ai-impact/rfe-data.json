@@ -9,7 +9,7 @@
       "created": "2026-03-15T10:00:00Z",
       "creator": "schen",
       "creatorDisplayName": "Sarah Chen",
-      "labels": ["rfe-creator-auto-created", "rfe-creator-auto-revised", "customer-request"],
+      "labels": ["rfe-creator-auto-created", "rfe-creator-auto-revised", "rfe-creator-needs-attention", "customer-request"],
       "aiInvolvement": "both",
       "linkedFeature": {
         "key": "RHAISTRAT-1168",
@@ -26,7 +26,7 @@
       "created": "2026-03-12T14:30:00Z",
       "creator": "jpark",
       "creatorDisplayName": "James Park",
-      "labels": ["rfe-creator-auto-created"],
+      "labels": ["rfe-creator-auto-created", "rfe-creator-feasibility-unknown"],
       "aiInvolvement": "created",
       "linkedFeature": null
     },
@@ -84,7 +84,7 @@
       "created": "2026-02-20T08:30:00Z",
       "creator": "rpatel",
       "creatorDisplayName": "Raj Patel",
-      "labels": ["rfe-creator-auto-created"],
+      "labels": ["rfe-creator-auto-created", "rfe-creator-feasibility-fail"],
       "aiInvolvement": "created",
       "linkedFeature": null
     },

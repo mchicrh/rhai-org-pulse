@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import LoadingOverlay from '@shared/client/components/LoadingOverlay.vue'
 import MetricsRow from './MetricsRow.vue'
+import PipelineFrictionRow from './PipelineFrictionRow.vue'
 import TrendCharts from './TrendCharts.vue'
 import RFEList from './RFEList.vue'
 
@@ -25,7 +26,8 @@ const props = defineProps({
   priorityFilter: { type: String, default: 'all' },
   statusFilter: { type: String, default: 'all' },
   selectedRFE: { type: Object, default: null },
-  rfeToFeature: { type: Object, default: () => ({}) }
+  rfeToFeature: { type: Object, default: () => ({}) },
+  pipelineFriction: { type: Object, default: null }
 })
 
 const emit = defineEmits([
@@ -106,6 +108,8 @@ const isEmpty = computed(() => !props.rfeData?.fetchedAt)
       <!-- Data display -->
       <template v-else>
         <MetricsRow :metrics="metrics" />
+
+        <PipelineFrictionRow :pipelineFriction="pipelineFriction" />
 
         <TrendCharts
           :trendData="trendData"

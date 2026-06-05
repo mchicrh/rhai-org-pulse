@@ -73,13 +73,14 @@ module.exports = function registerRoutes(router, context) {
         metrics: { createdPct: 0, createdChange: 0, trend: 'stable', revisedCount: 0, priorRevisedCount: 0, windowTotal: 0, totalRFEs: 0 },
         trendData: [],
         breakdown: [],
+        pipelineFriction: { needsAttentionPct: 0, needsAttentionChange: 0, needsAttentionTrend: 'stable', feasibilityBlockedPct: 0, feasibilityBlockedChange: 0, feasibilityBlockedTrend: 'stable' },
         issues: []
       });
     }
 
     // Compute metrics server-side from cached issues
     const config = getConfig(readFromStorage);
-    const { metrics, trendData, breakdown } = computeAllMetrics(data.issues, timeWindow, config);
+    const { metrics, trendData, breakdown, pipelineFriction } = computeAllMetrics(data.issues, timeWindow, config);
 
     res.json({
       fetchedAt: data.fetchedAt,
@@ -87,6 +88,7 @@ module.exports = function registerRoutes(router, context) {
       metrics,
       trendData,
       breakdown,
+      pipelineFriction,
       issues: data.issues
     });
   });
